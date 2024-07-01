@@ -1,0 +1,157 @@
+\documentclass[9pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{inter} % https://tug.org/FontCatalogue/
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{geometry}
+\geometry{
+a4paper,
+top=0.5in,
+bottom=0.5in,
+left=0.5in,
+right=0.5in
+}
+
+\setcounter{secnumdepth}{0} % remove section numbering
+\pdfgentounicode=1 % make ATS friendly
+
+\usepackage{enumitem}
+\setlist[itemize]{
+    noitemsep,
+    left=0pt..1.5em
+}
+\setlist[description]{itemsep=0pt}
+\setlist[enumerate]{align=left, noitemsep}
+
+\usepackage[dvipsnames]{xcolor}
+% \usepackage[dvipsnames, svgnames, x11names]{xcolor} 
+% \usepackage[dvipsnames]{xcolor} % xcolor.pdf Sec.4 Colors by Name
+\colorlet{icnclr}{gray}
+% \colorlet [⟨type⟩]{⟨name⟩}[⟨num model⟩]{⟨color ⟩}
+% \definecolor[⟨type⟩]{⟨name⟩}{⟨model-list⟩}{⟨spec-list⟩}
+
+
+\usepackage{titlesec}
+% \titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
+% \titlespacing{\section}{0pt}{*3}{*1}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+% \titleformat{<command>}[<shape>]{<format>}{<label>}{<sec>}{<before-code>}[<after-code>]  
+\titleformat{\section}{\color{Sepia}\large\fontseries{black}\selectfont\uppercase}{}{}{\ruleafter}[\global\RemVStrue]
+\titleformat{\subsection}{\large\fontseries{semibold}\selectfont}{}{}{\rvs}
+\titleformat{\subsubsection}{\large\fontseries{medium}\selectfont}{}{}{}
+
+\usepackage{xhfill} 
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{1pt}[gray]} % add rule after title in .5 x-height 
+
+\newif\ifRemVS % remove vspace between \section & \subsection
+\newcommand{\rvs}{
+    \ifRemVS
+        \vspace{-1.5ex}
+    \fi
+    \global\RemVSfalse
+}
+
+
+\usepackage{fontawesome5}
+
+\usepackage[bookmarks=false]{hyperref} % [imp!]
+\hypersetup{ 
+    colorlinks=true,
+    urlcolor=Sepia,
+    pdftitle={Kevin Groce Resume},
+}
+
+\usepackage[page]{totalcount}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}	
+\fancyhf{}							
+\cfoot{\color{darkgray} Kevin Groce's Resume -- Page \thepage{} of \totalpages}
+
+
+\begin{document}
+
+%== HEADER ==%
+\begin{center}
+    {\fontsize{30}{30}\selectfont\interthin KEVIN\interheavy GROCE} \\ \bigskip
+    {\color{icnclr}\faEnvelope[regular]} \href{mailto:kev.groce@gmail.com}{kev.groce@gmail.com} 
+    $|$ 
+    {\color{icnclr}\faIcon{mobile-alt}} \href{tel:5014580233}{(501)458-0233}
+    $|$ 
+    {\color{icnclr}\faLinkedinIn} \href{https://www.linkedin.com/in/kevin-groce-b90818229/}{linkedin.com/kevin-groce} 
+    $|$ 
+    {\color{icnclr}\faGithub} \href{https://github.com/kjgthecoder}{kjgthecoder}
+\end{center}
+
+\section{Experience}
+%===================
+\subsection{Gainwell Technologies LLC \hfill Aug 2023 -- Present}
+\subsubsection{Associate Professional Programmer Analyst \hfill Conway, AR}
+\begin{itemize}
+    \item Code, test, debug, and document programs; modify products/systems as needed, in UNIX environment in C. 
+    \item Perform data analysis for project support.
+    \item Prepare test data and run tests to evaluate unit testing results; develop test plans.
+\end{itemize}
+
+\subsection{Gainwell Technologies LLC \hfill [May 2022 - Aug 2022, May 2023 - Aug 2023]}
+\subsubsection{C\# .NET Developer - Intern \hfill Conway, AR} 
+\begin{itemize}
+    \item Participated in and developed a deeper understanding of agile methodologies, specifically working on both scrum and Kanban teams.
+    \item Worked with the non-relational document database, MongoDB, and acquired a knowledge of event sourcing patterns and database architecture.
+    \item Involved in designing, developing, and debugging Prior Authorization, Drug Rebate, and Provider Management modules using ASP.NET and C\#.
+\end{itemize}
+
+\subsection{Acxiom \hfill Nov 2022 - May 2023}
+\subsubsection{Delivery Analyst - Intern \hfill Conway, AR}
+\begin{itemize}
+    \item Delivered data, data products, and information that supported Acxiom’s Partner Product offerings.
+    \item Ensured that partners and clients received clean, enhanced, segmented, ready-to-use data. 
+    \item Analyzed process and data to ensure efficient delivery of services to Acxiom partners and clients.
+\end{itemize}
+
+\subsection{US Air Force Reserves \hfill July 2016 - July 2024}
+\subsubsection{Aircraft Electrical and Environmental Systems Mechanic \hfill Barksdale, AFB, LA}
+\begin{itemize}
+    \item Responsible for the installation, removal, and repair of all electrical and environmental components of the B-52 aircraft.
+    \item Follow government mandated technical orders to provide maintenance and troubleshooting. 
+    \item Conduct scheduled and unscheduled maintenance and inspections electrical and environmental systems.
+\end{itemize}
+
+\section{Projects}
+%==================
+\subsection{\href{https://github.com/kjgthecoder/bashCopier}{Bash Copier}}
+\begin{itemize}
+    \item Developed a Python-based GUI application with Tkinter to simplify copying scripts from PDFs to terminals for a Linux/Unix course, incorporating features to maintain formatting and remove line numbers, enhancing Python programming and GUI design skills.
+\end{itemize}
+
+\subsection{\href{https://snowball-debt-calculator.click/}{Snowball Debt Calculator}}
+\begin{itemize}
+    \item Created a web application using Spring Boot and AWS to apply the snowball method for debt repayment planning, demonstrating advanced knowledge in object-oriented programming, cloud services, and application deployment.
+\end{itemize}
+
+\subsection{\href{https://github.com/kjgthecoder/RecipeReplay}{Recipe Replay}}
+\begin{itemize}
+    \item Developed RecipeReplay, a web automation tool using Playwright, MoviePy, Requests, and OpenAI's API to convert cooking videos into formatted written recipes, streamlining the learning process for home cooks.
+\end{itemize}
+
+\section{Education}
+%===================
+\subsection{University of Central Arkansas \hfill May 2023}
+\begin{tabular}{@{}p{\textwidth}@{}}
+    \textit{BS in Information Systems, Minor in Computer Science} \\
+    \vspace{0.0em} % Adjust the space between lines
+    \textit{BBA in Marketing, Minor in Spanish} \\
+    \vspace{0.0em} % Adjust the space between lines
+\end{tabular}
+
+\section{Skills}
+%===============
+\begin{description}
+    \item[Programming Languages] Python, C++, Javascript, C\#, Java, C,  
+    \item[Cloud Technologies] AWS: S3, EC2, CloudFront, CloudWatch, Lambda, Glue, ECR, EKS
+    \item[Frameworks] React.js, Node.js, Flask, Tkinter, Spring Boot
+\end{description}
+
+\end{document}
